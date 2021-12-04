@@ -4,7 +4,33 @@ fun main() {
     val DAY = 2
 
     fun part1(input: List<String>): Int {
-        throw NotImplementedError("Oops, I accidentally did not save my solution to part 1 :|")
+        class Position(var depth: Int = 0, var x: Int = 0)
+
+        /**
+         * Given a position, returns a function that can be called many times to iteratively
+         * set the position. I probably should have just made this a method in Position.
+         */
+        val updatePosition = { position: Position ->
+            { line: String ->
+                val (direction, magnitudeString) = line.split(" ")
+                val magnitude = magnitudeString.toInt()
+
+                when (direction) {
+                    "down" -> position.depth += magnitude
+                    "up" -> position.depth -= magnitude
+                    "forward" -> position.x += magnitude
+                }
+            }
+        }
+
+        val position = Position()
+
+        // I could have / should have used reduce but this is not that bad and I was feeling lazy
+        input.forEach(updatePosition(position))
+
+        val answer = position.x * position.depth
+
+        return answer
     }
 
     fun part2(input: List<String>): Int {
