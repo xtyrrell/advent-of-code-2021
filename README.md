@@ -1,5 +1,9 @@
 # advent-of-code-2021
 
+Note from Max: My solutions will probably be terrible. This is my first time ever writing Kotlin and I am optimising for speed over quality. Sorry!
+
+---
+
 Welcome to the Advent of Code[^aoc] Kotlin project created by [xtyrrell][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
 
 In this repository, xtyrrell is about to provide solutions for the puzzles using [Kotlin][kotlin] language.
