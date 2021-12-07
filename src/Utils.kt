@@ -47,3 +47,5 @@ fun <T> List<T>.toPair(): Pair<T, T> {
 }
 
 infix fun Int.upOrDownTo(other: Int): IntProgression = if (this < other) this..other else this downTo other
+
+fun <T> buildFrequencyMap(things: List<T>): Map<T, Int> = things.groupingBy { it }.eachCount().mapValues { (_, count) -> count }
